@@ -10,4 +10,5 @@ export const db = new Pool({
   user: process.env.PG_USER,
   password: process.env.PG_PASS,
   database: process.env.PG_DB,
+  ssl: { rejectUnauthorized: false }  // Required for Render Postgres
 });
