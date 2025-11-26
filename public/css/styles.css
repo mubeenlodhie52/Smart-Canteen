@@ -1,0 +1,341 @@
+/* ===== General Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  flex: 1;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ff6347;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #ffe;
+}
+
+/* ===== Titles ===== */
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ff6347;
+}
+
+/* ===== Card Container ===== */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin: 1rem;
+  color: #333;
+}
+
+.card p {
+  margin: 0 1rem 1rem 1rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card .btn {
+  display: block;
+  margin: 0 1rem 1rem 1rem;
+  padding: 0.5rem;
+  background: #ff6347;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+.card .btn:hover {
+  background: #e5533d;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* ===== Order Form ===== */
+.order-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 0 auto 3rem auto; /* extra bottom margin for footer */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.order-box input,
+.order-box select,
+.order-box button {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.order-box button {
+  background: #ff6347;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.order-box button:hover {
+  background: #e5533d;
+}
+
+/* ===== Admin Cards ===== */
+.card-container.admin {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem; /* spacing below cards */
+}
+
+/* ===== Animations ===== */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Footer ===== */
+.footer {
+  margin-top: auto;
+  background: #ff6347;
+  color: white;
+  padding: 2rem 1rem;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-left h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-left p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.footer-center ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-center ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-center ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-center ul li a:hover {
+  color: #ffe;
+}
+
+.footer-right p {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #fff8;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar a {
+    margin: 0.5rem 0;
+  }
+}
+
+/* ===== Back to Home Button ===== */
+.back-home {
+  margin-top: 2rem;
+  display: inline-block;
+  background: #ff6347;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.back-home:hover {
+  background: #e5533d;
+}
+
+/* ===== Orders Table ===== */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.orders-table th, .orders-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.orders-table th {
+  background: #ff6347;
+  color: #fff;
+}
+
+.order-items {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.order-items li {
+  margin-bottom: 0.3rem;
+}
+
+/* Responsive Orders Table */
+@media (max-width: 768px) {
+  .orders-table, .orders-table thead, .orders-table tbody, .orders-table th, .orders-table td, .orders-table tr {
+    display: block;
+  }
+
+  .orders-table th {
+    display: none;
+  }
+
+  .orders-table td {
+    position: relative;
+    padding-left: 50%;
+    margin-bottom: 1rem;
+  }
+
+  .orders-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    font-weight: bold;
+  }
+}
+
+.back-home {
+      margin-top: 2rem;
+      display: inline-block;
+      background: #333;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+.back-home-admin {
+      display: flex;
+      background: #333;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      justify-content: center;
+    }

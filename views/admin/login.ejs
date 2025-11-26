@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login - SmartCanteen</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title slide-up">Admin Login</h1>
+
+    <div class="order-box fade-in" style="max-width: 400px; margin: 2rem auto;">
+      <% if(error){ %>
+        <p style="color:red; text-align:center; margin-bottom:1rem;"><%= error %></p>
+      <% } %>
+      <form action="/admin/login" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit" style="margin-top: 50px;" class="btn big">Login</button>
+      </form>
+      <a href="/" class="back-home-admin">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

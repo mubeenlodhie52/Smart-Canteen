@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartCanteen - Home</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .error-message {
+      color: red;
+      text-align: center;
+      margin: 1rem 0;
+    }
+    
+  </style>
+</head>
+<body>
+
+<nav class="navbar fade-in">
+  <h2 class="logo">SmartCanteen</h2>
+  <a href="/">Home</a>
+  <a href="/menu">Menu</a>
+  <a href="/admin/orders">Admin</a>
+</nav>
+
+<div class="container">
+  <h1 class="title slide-up">Welcome to SmartCanteen</h1>
+
+  <!-- Error message placeholder -->
+  <% if (error) { %>
+    <p class="error-message"><%= error %></p>
+  <% } %>
+
+  <div class="card-container fade-in">
+    <% menu.forEach(item => { %>
+      <div class="card fade-in">
+        <img src="<%= item.image_url %>" alt="<%= item.item_name %>">
+        <h3><%= item.item_name %></h3>
+        <p><%= item.description %></p>
+        <p>Rs <%= item.price %></p>
+        <form action="/order" method="POST">
+          <input type="hidden" name="item_id" value="<%= item.item_id %>">
+          <button type="submit" class="btn">Order Now</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer fade-in">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>SmartCanteen</h3>
+        <p>Delicious food delivered right to your table!</p>
+      </div>
+      <div class="footer-center">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/menu">Menu</a></li>
+          <li><a href="/admin/orders">Admin</a></li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        <h4>Contact Us</h4>
+        <p>Email: info@smartcanteen.com</p>
+        <p>Phone: +92 324 9740759</p>
+        <p>Made By: Mubeen Khan</p>
+      </div>
+    </div>
+    <p class="footer-bottom">© <%= new Date().getFullYear() %> SmartCanteen. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
