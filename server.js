@@ -12,9 +12,8 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ======================
+
 // MIDDLEWARE
-// ======================
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
@@ -25,25 +24,22 @@ app.use(session({
   saveUninitialized: false,
 }));
 
-// ======================
+
 // VALIDATION
-// ======================
 function isValidPakistaniNumber(number) {
   const regex = /^03[0-9]{9}$/;
   return regex.test(number);
 }
 
-// ======================
+
 // ADMIN AUTH MIDDLEWARE
-// ======================
 function adminAuth(req, res, next) {
   if (!req.session.adminId) return res.redirect("/admin/login");
   next();
 }
 
-// ======================
+
 // MAIN PAGES
-// ======================
 
 // Home page
 app.get("/", async (req, res) => {
@@ -128,9 +124,7 @@ app.get("/success", (req, res) => {
   res.render("success", { error: null });
 });
 
-// ======================
 // ADMIN LOGIN / LOGOUT
-// ======================
 
 app.get("/admin/login", (req, res) => {
   res.render("admin/login", { error: null });
@@ -160,9 +154,8 @@ app.get("/admin/logout", (req, res) => {
   req.session.destroy(() => res.redirect("/admin/login"));
 });
 
-// ======================
+
 // ADMIN PAGES (Protected)
-// ======================
 app.use("/admin", adminAuth);
 
 // Add Item Page

@@ -41,7 +41,7 @@
             <h3><%= cat.category_name %></h3>
             <form action="/admin/deleteCategory" method="POST" style="margin-top:1rem;">
               <input type="hidden" name="category_id" value="<%= cat.category_id %>" />
-              <button type="submit" class="btn">Delete</button>
+              <button type="submit" class="delBtn">Delete</button>
             </form>
           </div>
         <% }) %>

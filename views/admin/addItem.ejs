@@ -56,7 +56,7 @@
             <p><%= item.description %></p>
             <form action="/admin/deleteItem" method="POST" style="margin-top:1rem;">
               <input type="hidden" name="item_id" value="<%= item.item_id %>" />
-              <button type="submit" class="btn">Delete</button>
+              <button type="submit" class="delBtn">Delete</button>
             </form>
           </div>
         <% }) %>

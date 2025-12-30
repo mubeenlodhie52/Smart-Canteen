@@ -1,4 +1,4 @@
-/* ===== General Reset ===== */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@ body {
   flex: 1;
 }
 
-/* ===== Navbar ===== */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -51,7 +51,7 @@ body {
   color: #ffe;
 }
 
-/* ===== Titles ===== */
+/*Titles*/
 .title {
   font-size: 2rem;
   text-align: center;
@@ -59,14 +59,14 @@ body {
   color: #ff6347;
 }
 
-/* ===== Card Container ===== */
+/*Card Container*/
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
-/* ===== Cards ===== */
+/*Cards*/
 .card {
   background: #fff;
   border-radius: 12px;
@@ -110,6 +110,19 @@ body {
   text-align: center;
 }
 
+.card .delBtn {
+  display: block;
+  margin: 0 1rem 1rem 1rem;
+  padding: 0.5rem;
+  background: red;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
+}
+
 .card .btn:hover {
   background: #e5533d;
 }
@@ -119,7 +132,7 @@ body {
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-/* ===== Order Form ===== */
+/*Order Form*/
 .order-box {
   background: #fff;
   padding: 2rem;
@@ -152,14 +165,14 @@ body {
   background: #e5533d;
 }
 
-/* ===== Admin Cards ===== */
+/*Admin Cards*/
 .card-container.admin {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem; /* spacing below cards */
 }
 
-/* ===== Animations ===== */
+/*Animations*/
 .fade-in {
   animation: fadeIn 1s ease forwards;
   opacity: 0;
@@ -178,7 +191,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Footer ===== */
+/*Footer*/
 .footer {
   margin-top: auto;
   background: #ff6347;
@@ -253,7 +266,7 @@ body {
   }
 }
 
-/* ===== Back to Home Button ===== */
+/*Back to Home Button*/
 .back-home {
   margin-top: 2rem;
   display: inline-block;
@@ -269,7 +282,7 @@ body {
   background: #e5533d;
 }
 
-/* ===== Orders Table ===== */
+/*Orders Table*/
 .orders-table {
   width: 100%;
   border-collapse: collapse;
