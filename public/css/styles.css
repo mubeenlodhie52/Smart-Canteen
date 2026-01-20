@@ -6,6 +6,10 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #f9f9f9;
   color: #333;
@@ -27,12 +31,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ff6347;
+  background: #841906;
   color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 8px;
+  padding: 10px 15px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   flex-wrap: wrap;
+  
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar .logo {
@@ -56,7 +63,7 @@ body {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 2rem;
-  color: #ff6347;
+  color: #841906;
 }
 
 /*Card Container*/
@@ -101,7 +108,7 @@ body {
   display: block;
   margin: 0 1rem 1rem 1rem;
   padding: 0.5rem;
-  background: #ff6347;
+  background: #bc3118;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -124,7 +131,7 @@ body {
 }
 
 .card .btn:hover {
-  background: #e5533d;
+  background: #841906;
 }
 
 .card:hover {
@@ -154,7 +161,7 @@ body {
 }
 
 .order-box button {
-  background: #ff6347;
+  background: #bc3118;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -162,7 +169,7 @@ body {
 }
 
 .order-box button:hover {
-  background: #e5533d;
+  background: #841906;
 }
 
 /*Admin Cards*/
@@ -194,7 +201,7 @@ body {
 /*Footer*/
 .footer {
   margin-top: auto;
-  background: #ff6347;
+  background: #841906;
   color: white;
   padding: 2rem 1rem;
   border-radius: 12px 12px 0 0;
@@ -270,7 +277,7 @@ body {
 .back-home {
   margin-top: 2rem;
   display: inline-block;
-  background: #ff6347;
+  background: #841906;
   color: #fff;
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
@@ -279,7 +286,7 @@ body {
 }
 
 .back-home:hover {
-  background: #e5533d;
+  background: #841906;
 }
 
 /*Orders Table*/
@@ -296,7 +303,7 @@ body {
 }
 
 .orders-table th {
-  background: #ff6347;
+  background: #841906;
   color: #fff;
 }
 
@@ -352,3 +359,69 @@ body {
       text-decoration: none;
       justify-content: center;
     }
+
+
+/* HERO SECTION */
+.hero {
+  height: 85vh;
+  background: 
+    url("/images/imgg.png") center/cover no-repeat ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 1rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 0.9rem 2.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  background: transparent;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+  background-color: #841906;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.2 ), -4px -4px 10px rgba(0,0,0,0.2);
+}
+
+.hero-btn:hover {
+  transform: scale( 1.05 );
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    height: 50vh;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero .hero-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
